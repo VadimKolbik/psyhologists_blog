@@ -1,0 +1,17 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+<div class="all_posts">
+    {% for post in posts %}
+    {% if post.is_published %}
+    <div class="post">
+        <p>{{ post.time_create }} --- <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></p>
+        <p>Категория: {{ post.cat.name}}</p>
+        <p>{{ post.content|truncatewords:50 }} <a href="{% url 'post_detail' post.slug %}">Читать статью >>></a></p>
+    </div>
+    <hr>
+    {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

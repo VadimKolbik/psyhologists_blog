@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+	<link type="text/css" href="{% static 'posts/css/styles.css' %}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav class="main">
+        <p>
+        <a href="{% url 'home' %}">Главная</a>
+        <a href="#">Обо мне</a>
+        <a href="#">Контакты</a>
+        <a href="/admin">Admin-panel</a></p>
+    </nav>
+    <div class="general" >
+        {% block nav %}
+        <div class="left" >
+            <ul style="padding: 0; margin-right: 10px;">
+                {% for cat in cats%}
+                {% if cat.pk == cat_selected %}
+                <p><a style="text-decoration: underline;" href="#">{{cat.name}}</a></p>
+                {% else %}
+                <p><a href="{% url 'category' cat.slug %}"> {{cat.name}} </a></p>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endblock nav %}
+        <div class="right">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </div>
+</body>
+</html>
