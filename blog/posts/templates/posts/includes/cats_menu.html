@@ -1,0 +1,9 @@
+<ul style="padding: 0; margin-right: 10px; list-style: none;">
+    {% for cat in cats%}
+    {% if cat.pk == cat_selected %}
+    <li style="margin-bottom: 0.5em;"><a style="text-decoration: underline;" href="#">{{cat.name}}</a></li>
+    {% else %}
+    <li style="margin-bottom: 0.5em;"><a href="{{ cat.get_absolute_url }}"> {{cat.name}} </a></li>
+    {% endif %}
+    {% endfor %}
+</ul>

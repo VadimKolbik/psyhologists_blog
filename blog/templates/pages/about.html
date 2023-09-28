@@ -1,0 +1,7 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+{{flatpage.newflatpage.description|safe}}
+
+{{flatpage.newflatpage.text_block|safe}}
+{% endblock content %}

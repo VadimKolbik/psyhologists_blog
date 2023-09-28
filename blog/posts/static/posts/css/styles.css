@@ -3,23 +3,9 @@ html, body {
     margin: auto;
 	padding: auto;
 	max-width: 1200px;
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(195, 216, 184);
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
-.general{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-}
-
-.left{
-    max-width: max-content;
-}
-
-/* .right {
-    flex: 3;
-} */
 
 nav.main {
     background-color: rgb(225, 225, 225);
@@ -31,6 +17,21 @@ nav.main {
     width: 100%;
 }
 
+.general{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    
+}
+
+.left{
+    align-self: flex-start;
+}
+
+/* .right{
+    align-self: center;
+} */
+
 a {
     text-decoration: none;
     color: black;
@@ -38,5 +39,37 @@ a {
 
 a:hover {
     text-decoration: underline;
-    font-weight: bold;
+    color: #0004ff;
+}
+
+.post {
+    background: #eee;
+    padding: 5px 10px 5px 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #555;
+}
+
+div.post .head {
+    padding: 5px;
+}
+
+div.post p.first {
+    margin: 0;
+    float: left;
+}
+div.post p.last {
+    margin: 0;
+    float: right;
+}
+
+p.link-read-post {
+	text-align: right;
+}
+p.link-read-post a {
+	padding: 10px;
+	min-width: 100px;
+	background: #333671;
+	color: #fff;
+	text-decoration: none;
 }
